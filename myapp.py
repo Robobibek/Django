@@ -7,49 +7,49 @@ def get_data(id = None):
     data = {}
     if id is not None:
         data = {'id':id}
+    headers = {'Content-Type': 'application/json'}
     json_data = json.dumps(data)
-    r = requests.get(url = URL, data = json_data)
+    r = requests.get(url = URL, headers= headers, data = json_data)
     data = r.json()
     print(data)
-
-# get_data(2)
+# get_data()
 
 def post_data():
     data = {
-        'name': 'Rohit',
-        'roll': 103,
-        'city': 'Bharatpur'
+        'name': 'Tony',
+        'roll': 145,
+        'city': 'KTM'
     }
-
+    headers = {'Content-Type': 'application/json'}
     json_data = json.dumps(data)
-    r = requests.post(url = URL, data = json_data)
+    r = requests.post(url = URL, headers= headers, data = json_data)
     data = r.json()
     print(data)
-post_data()
+# post_data()
 
 
 def update_data():
     data = {
         'id': 1,
-        'name': 'Susmita',
-        'city': 'Gaindakot'
+        'name': 'Robert',
+        'city': 'Bhaktapur'
     }
-
+    headers = {'Content-Type': 'application/json'}
     json_data = json.dumps(data)
-    r = requests.put(url = URL, data = json_data)
+    r = requests.put(url = URL, headers= headers, data = json_data)
     data = r.json()
     print(data)
-
-# update_data()
+update_data()
 
 
 def delete_data():
     data = {
-        'id': 3}
-
+        'id': 5
+    }
+    headers = {'Content-Type': 'application/json'}
     json_data = json.dumps(data)
-    r = requests.delete(url = URL, data = json_data)
+    r = requests.delete(url = URL, headers= headers, data = json_data)
     data = r.json()
     print(data)
 
-# delete_data()
+#delete_data()
